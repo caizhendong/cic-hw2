@@ -1,6 +1,4 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
 
 from langchain_openai import AzureOpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -46,7 +44,6 @@ if __name__ == "__main__":
     os.environ["OPENAI_API_VERSION"] = "2023-05-15"
     os.environ["OPENAI_API_BASE"] = "https://pvg-azure-openai-uk-south.openai.azure.com/openai"
     env_path = os.getenv("HOME") + "/Documents/src/openai/.env"
-    load_dotenv(dotenv_path=env_path, verbose=True)
 
     st.title('IRM Review')
 
