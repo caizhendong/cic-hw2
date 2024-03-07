@@ -5,12 +5,7 @@ from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain.chat_models import AzureChatOpenAI
 
-import os
 from dotenv import load_dotenv
-
-from dotenv import load_dotenv
-import pandas as pd
-import tiktoken
 import os
 
 # 设置环境变量
