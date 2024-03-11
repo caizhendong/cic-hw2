@@ -6,9 +6,6 @@ from langchain.chains import RetrievalQA
 from langchain_openai import AzureChatOpenAI
 import os
 
-# # 设置环境变量
-# os.environ['AZURE_OPENAI_API_KEY'] = '8d1daadc333e42b18e26d861588cfd43'
-
 
 @st.cache_resource
 def load_data(vector_store_dir: str="data/IRM-faiss"):
