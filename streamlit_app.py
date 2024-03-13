@@ -9,7 +9,7 @@ import os
 
 @st.cache_resource
 def load_data(vector_store_dir: str="data/IRM-faiss"):
-    db = FAISS.load_local(vector_store_dir, AzureOpenAIEmbeddings())
+    db = FAISS.load_local(vector_store_dir, AzureOpenAIEmbeddings(), allow_dangerous_deserialization=True)
     llm = AzureChatOpenAI(model_name="gpt-35-turbo", temperature=0.5)
 
     print("Loading data...")
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     os.environ["OPENAI_API_TYPE"] = "azure"
     os.environ["OPENAI_API_VERSION"] = "2023-05-15"
     os.environ["OPENAI_API_BASE"] = "https://pvg-azure-openai-uk-south.openai.azure.com/openai"
-    env_path = os.getenv("HOME") + "/.env"
+    env_path = "/workspaces/cic-hw2" + "/.env"
 
     st.title('IRM Review')
 
